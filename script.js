@@ -1,11 +1,17 @@
 
 function gerartabuada() {
-    var numero = Number(document.querySelector('#numero').value);
+    var numero = document.querySelector('#numero');
     var res = document.querySelector('#res'); 
     //res.innerHTML = `Está funcionando ${numero.length}`
     resultado = []
-    for (let i=0; i <=10; i++){
-        resultado.push(`${numero}x${i} = ${numero*i}`)
+    if (numero.value.length == 0){
+        window.alert('Insira um valor para a tabuada')
+    }else {
+        num = Number(numero.value);
+        for (let i=0; i <=10; i++){
+            resultado.push(`${num}x${i} = ${num*i}`)
+        }
+        res.innerHTML = `${resultado.join('</br>')}`
     }
-    res.innerHTML = `${resultado.join('</br>')}`
+    
 }
